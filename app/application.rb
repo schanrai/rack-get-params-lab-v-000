@@ -24,7 +24,7 @@ class Application
         end
       end
     #elsif req.path.match(/add/)
-      #if @@items.include? 
+      #if @@items.include?
     else
       resp.write "Path Not Found"
     end
