@@ -27,6 +27,7 @@ class Application
       item_value = req.params["item="]
         if @@items.include?(item_value)
           @@cart << item_value
+          resp.write "added #{item_value}"
         else
           resp.write "We don't have that item"
         end
