@@ -22,6 +22,8 @@ class Application
           resp.write "#{item}\n"
         end
       end
+    #elsif req.path.match(/add/)
+      #if @@items.include? 
     else
       resp.write "Path Not Found"
     end
