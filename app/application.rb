@@ -6,7 +6,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    binding.pry
+
 
     if req.path.match(/items/)
       @@items.each do |item|
@@ -33,7 +33,7 @@ class Application
   end
 
 search_term = req.params["q"]
- 
+
       if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
       else
