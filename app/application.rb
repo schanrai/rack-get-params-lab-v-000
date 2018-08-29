@@ -32,6 +32,14 @@ class Application
     resp.finish
   end
 
+search_term = req.params["q"]
+ 
+      if @@items.include?(search_term)
+        resp.write "#{search_term} is one of our items"
+      else
+        resp.write "Couldn't find #{search_term}"
+      end
+
 =begin
 Create a new route called /add that takes in a GET param with the key item.
 This should check to see if that item is in @@items and then add it to the cart if it is. Otherwise give an error
