@@ -29,6 +29,13 @@ class Application
     resp.finish
   end
 
+=begin
+Create a new route called /add that takes in a GET param with the key item.
+This should check to see if that item is in @@items and then add it to the cart if it is. Otherwise give an error
+=end
+
+
+
   def handle_search(search_term)
     if @@items.include?(search_term)
       return "#{search_term} is one of our items"
