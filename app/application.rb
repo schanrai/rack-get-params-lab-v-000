@@ -32,7 +32,7 @@ class Application
     resp.finish
   end
 
-search_term = req.params["q"]
+item_value = req.params["item="]
 
       if @@items.include?(search_term)
         resp.write "#{search_term} is one of our items"
