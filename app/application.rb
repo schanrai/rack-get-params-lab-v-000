@@ -23,8 +23,13 @@ class Application
           resp.write "#{item}\n"
         end
       end
-    #elsif req.path.match(/add/)
-      #if @@items.include?
+    elsif req.path.match(/add/)
+      item_value = req.params["item="]
+        if @@items.include?(item_value)
+          @@cart << item_value
+        else
+          resp.write "We don't have that item" 
+        end
     else
       resp.write "Path Not Found"
     end
@@ -32,13 +37,6 @@ class Application
     resp.finish
   end
 
-item_value = req.params["item="]
-
-      if @@items.include?(search_term)
-        resp.write "#{search_term} is one of our items"
-      else
-        resp.write "Couldn't find #{search_term}"
-      end
 
 =begin
 Create a new route called /add that takes in a GET param with the key item.
